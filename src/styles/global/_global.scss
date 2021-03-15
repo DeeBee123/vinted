@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+.app {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    background-color: $white;
+    // font-family: $font-family;
+}
