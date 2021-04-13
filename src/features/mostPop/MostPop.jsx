@@ -3,10 +3,11 @@ import React from "react";
 import data from "../../db.json";
 
 import { Card } from "../../components/card/Card";
+import "./mostPop.scss"
 
 export const MostPop = () => {
   return (
-    <>
+    <div className="cards-row">
       {data.posts.map((post) => (
         <Card
         key={post.id}
@@ -18,6 +19,6 @@ export const MostPop = () => {
           brand={post.brand}
         />
       ))}
-    </>
+    </div>
   );
 };
