@@ -1,0 +1,60 @@
+{
+ "posts":[
+     {"id":1,
+         "category": "women",
+         "type": "clothes",
+         "name":"skirt",
+         "size":["M",38,10],
+         "price": 20.00,
+         "likes": 10,
+         "favourite":true,
+         "brand":"zara",
+         "imgURL":"https://images.unsplash.com/photo-1616821445107-7027889ba209?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODMzMTQ1NA&ixlib=rb-1.2.1&q=85"
+     },
+     {"id":2,
+        "category": "women",
+        "type": "clothes",
+        "name":"dress",
+        "size":["S",34,6],
+        "price": 28.00,
+        "likes": 0,
+        "favourite":false,
+        "brand":"",
+        "imgURL":"https://images.unsplash.com/photo-1618214802314-7dff34596edb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODMzMTQ5OQ&ixlib=rb-1.2.1&q=85"
+    },
+    {"id":3,
+        "category": "women",
+        "type": "clothes",
+        "name":"shirt",
+        "size":["S",34,6],
+        "price": 12.12,
+        "likes": 12,
+        "favourite":true,
+        "brand":"",
+        "imgURL":"https://images.unsplash.com/photo-1618214802314-7dff34596edb?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODMzMTQ5OQ&ixlib=rb-1.2.1&q=85"
+
+    },
+    {"id":4,
+        "category": "women",
+        "type": "clothes",
+        "name":"jacket",
+        "size":["M",38,12],
+        "price": 28.50,
+        "likes": 3,
+        "favourite":false,
+        "brand":"Stradivarius",
+        "imgURL":"https://images.unsplash.com/photo-1617835215482-a55263e49162?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODMzMTYwOQ&ixlib=rb-1.2.1&q=85"
+    },
+    {"id":5,
+        "category": "men",
+        "type": "clothes",
+        "name":"shirt",
+        "size":["M",38,12],
+        "price": 38.00,
+        "likes": 6,
+        "favourite":false,
+        "brand":"Jack Wills",
+        "imgURL":"https://images.unsplash.com/photo-1618001789196-8b986847cd5e?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODMzMTY5MA&ixlib=rb-1.2.1&q=85"
+    }
+ ]
+}

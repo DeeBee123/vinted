@@ -1,0 +1,11 @@
+.heart {
+  color: rgba($color: #8686866e, $alpha: 0.3);
+  cursor: pointer;
+  &.active {
+      color: #09B1BA;
+  }
+}
+
+.fav-count {
+    color: #999;
+}

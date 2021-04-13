@@ -1,4 +1,4 @@
-@import "../../../styles/base";
+@import "../../styles/base";
 
 .navigation {
   width: 100%;
@@ -38,7 +38,7 @@
     position: relative;
     background-color: lightgray;
     appearance: none;
-    background-image: url("../../../assets/right-arrow.svg");
+    background-image: url("../../assets/right-arrow.svg");
     background-repeat: no-repeat;
     background-position-x: 100%;
     // background-position-y: 5px;
