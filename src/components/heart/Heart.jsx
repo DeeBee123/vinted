@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./heart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import data from "../../db.json";
+// import data from "../../db.json";
 
 export const Heart = ({ favourite, likes }) => {
 const [fav, setFav]= useState(favourite)
@@ -15,16 +15,16 @@ const [likeNumb, setLikeNumb]= useState(likes)
         setFav(true)
         setLikeNumb(prev => prev +1)
       }
-    // fav ? setFav(false) : setFav(true)
+  
   };
   return (
-    <>
+    <div>
       <FontAwesomeIcon
         className={fav ? "heart active" : "heart"}
         icon={faHeart}
         onClick={handleClick}
       />
       <span className="fav-count">{likeNumb}</span>
-    </>
+    </div>
   );
 };

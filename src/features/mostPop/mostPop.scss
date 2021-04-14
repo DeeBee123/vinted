@@ -1,4 +1,32 @@
 .cards-row{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.mostPop-section {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    h2{
+        font-weight: 400;
+    }
+}
+
+.card-button {
+    width:216px;
+    height:367px;
+    position: relative;
+    background-color: #F5F6F7;
+    cursor: pointer;
+    span {
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+color: #666;
+width: 100%;
+text-align: center;
+}
 }

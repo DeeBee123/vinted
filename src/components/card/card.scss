@@ -1,4 +1,29 @@
 .image {
-    width:182px;
-    height: 304px;
+    width:216px;
+    height: 319px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.info {
+    width: 90%;
+    margin: auto;
+    color: #999;
+    font-size: 12px;
+}
+
+.price {
+    color:#111;
+    font-size: 14px;
+    font-weight: 500;
+}
+.brand {
+    text-transform: capitalize;
+}
+
+.card:not(:last-child) {
+margin-right: 12px;
 }
