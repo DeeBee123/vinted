@@ -27,3 +27,7 @@
 .card:not(:last-child) {
 margin-right: 12px;
 }
+
+.card{
+    transition: 0.3s;
+}
