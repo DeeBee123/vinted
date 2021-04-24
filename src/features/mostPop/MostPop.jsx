@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import data from "../../db.json";
+// import data from "../../db.json";
 import { Card } from "../../components/card/Card";
 import "./mostPop.scss";
 import API from "../../shared/api";
@@ -7,7 +7,11 @@ import API from "../../shared/api";
 export const MostPop = () => {
   const [postsID, setPostsID] = useState([]);
   const [error, setError] = useState(false);
+  const [brands, setBrands] = useState([]);
+
+
   useEffect(() => {
+    console.log("effectas news");
     API.get(`news/`)
       .then((response) => {
         error && setError(false);
@@ -17,14 +21,27 @@ export const MostPop = () => {
         console.log(error);
         setError(true);
       });
-  }, []);
+  }, [error]);
 
+  useEffect(() => {
+    console.log("effect brands");
+    API.get(`brands/all`).then((response) => {
+      setBrands(response.data);
+    });
+  }, []);
+  
+  
   return (
     <div className="mostPop-section">
-      <h2>Populiarios prekės</h2>
+      <h2 className="section-title">Naujienų srautas</h2>
       <div className="cards-row">
         {postsID.map((post) => (
-          <Card key={post.id} productID={post.id} />
+          <Card
+            key={post.id}
+            productID={post.id}
+            postsID={postsID}
+            brands={brands}
+          />
         ))}
         {/* <div className="card-button" onClick={handleClickAll}>
           <span>Rodyti visas prekes</span>

@@ -1,33 +1,80 @@
 .image {
-    width:216px;
-    height: 319px;
+  width: 216px;
+  height: 319px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+ 
+  &:hover {
+  filter: brightness(1.2);
+  }
 }
 
+.user-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.avatar {
+  width: 24px;
+  height: 24px;
+border-radius: 50%;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-image: url('../../assets/blankUser.png');
+margin-right: 5px;
+}
+
+.user-name {
+  max-width: 113px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #999;
+  font-size: 12px;
+}
 .row {
-    display: flex;
-    justify-content: space-between;
-    
+  display: flex;
+  justify-content: space-between;
 }
 .info {
-    width: 90%;
-    margin: auto;
-    color: #999;
-    font-size: 12px;
+  width: 90%;
+  margin: auto;
+  color: #999;
+  font-size: 12px;
+  .price {
+   margin: 5px 0;
+  }
+  .size {
+    display: block;
+    margin-bottom: 5px;
+  
+  }
+  
 }
 
+
 .price {
-    color:#111;
-    font-size: 14px;
-    font-weight: 500;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+
 }
 .brand {
-    text-transform: capitalize;
+  text-transform: capitalize;
+  
 }
 
 .card:not(:last-child) {
-margin-right: 12px;
+  margin-right: 12px;
 }
 
-.card{
-    transition: 0.3s;
+.card {
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  
 }
