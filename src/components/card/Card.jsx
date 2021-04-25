@@ -3,10 +3,9 @@ import "./card.scss";
 // import { Heart } from "../heart/Heart";
 import API from "../../shared/api";
 
-
-export const Card = ({ productID, brands }) => {
+const Card = ({ productID, brands }) => {
   const [data, setData] = useState("");
-  const [user, setUser]= useState("")
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     console.log("effectas productID");
@@ -18,19 +17,27 @@ export const Card = ({ productID, brands }) => {
       .catch((error) => console.log(error));
   }, [productID]);
 
-  useEffect(()=> {
-    API.get(`users/${data.user}`).then((response)=> {
-      console.log(response.data)
-      setUser(response.data)
-    }
-    )
-  }, [data])
+  useEffect(() => {
+    console.log("effectas user");
+    API.get(`users/${data.user}`)
+      .then((response) => {
+        // console.log(response.data)
+        setUser(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, [data]);
 
   return (
     <div className="card">
       {data.length !== 0 && (
         <>
-        <div className="user-row"><div className="avatar" style={ user.avatar &&{ backgroundImage: `url(${user.avatar})` }}></div><span className="user-name">{user.name}</span></div>
+          <div className="user-row">
+            <div
+              className="avatar"
+              style={user.avatar && { backgroundImage: `url(${user.avatar})` }}
+            ></div>
+            <span className="user-name">{user.name}</span>
+          </div>
           <div
             className="image"
             style={{ backgroundImage: `url(${data.img[data.main_img]})` }}
@@ -39,7 +46,9 @@ export const Card = ({ productID, brands }) => {
             <div className="row">
               <span className="price">{data.price.toFixed(2)} &euro;</span>
             </div>
-           {data.size.length >0 && <span className="size">{data.size.join("/")}</span>}
+            {data.size.length > 0 && (
+              <span className="size">{data.size.join("/")}</span>
+            )}
             <div className="brand">
               {brands.map((brand) => brand.id === data.brand && brand.title)}
             </div>
@@ -49,3 +58,5 @@ export const Card = ({ productID, brands }) => {
     </div>
   );
 };
+
+export default Card;
