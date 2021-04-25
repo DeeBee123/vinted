@@ -1,6 +1,6 @@
 import React from "react";
-import {Loading} from "../components/loading/Loading";
+// import {Loading} from "../components/loading/Loading";
 
-const withCardLoading = (Component)=> (props) => 
-    !props.productID.length ? <span>Loading ..</span> : <Component {...props}/>
+const withCardLoading =(checkLength)=> (Component)=> (props) => 
+    checkLength(props) ? <span>Loading ..</span> : <Component {...props}/>
 export default withCardLoading

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import data from "../../db.json";
-// import Card from "../../components/card/Card";
-import "./mostPop.scss";
+import "./news.scss";
 import API from "../../shared/api";
-import  CardWithCompose  from "../../hoc/withCompose";
+import CardWithCompose  from "../../hoc/withCompose";
 
-export const MostPop = () => {
+export const News = () => {
   const [postsID, setPostsID] = useState([]);
   const [error, setError] = useState(false);
   const [brands, setBrands] = useState([]);
