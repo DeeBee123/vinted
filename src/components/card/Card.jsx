@@ -8,24 +8,20 @@ const Card = ({ productID, brands }) => {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    console.log("effectas productID");
     API.get(`products/${productID}`)
       .then((response) => {
-        // console.log(response.data)
         setData(response.data);
       })
       .catch((error) => console.log(error));
   }, [productID]);
 
   useEffect(() => {
-    console.log("effectas user");
-    API.get(`users/${data.user}`)
+    data.user &&  API.get(`users/${data.user}`)
       .then((response) => {
-        // console.log(response.data)
-        setUser(response.data);
+       setUser(response.data);
       })
       .catch((error) => console.log(error));
-  }, [data]);
+  }, [data.user]);
 
   return (
     <div className="card">

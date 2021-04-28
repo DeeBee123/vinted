@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./news.scss";
 import API from "../../shared/api";
-import CardWithCompose  from "../../hoc/withCompose";
+import Card from "../../components/card/Card";
 
 export const News = () => {
   const [postsID, setPostsID] = useState([]);
@@ -9,7 +9,6 @@ export const News = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    console.log("effectas news");
     API.get(`news/`)
       .then((response) => {
         error && setError(false);
@@ -22,7 +21,6 @@ export const News = () => {
   }, [error]);
 
   useEffect(() => {
-    console.log("effect brands");
     API.get(`brands/all`)
       .then((response) => {
         setBrands(response.data);
@@ -35,8 +33,9 @@ export const News = () => {
       <h2 className="section-title">Naujienų srautas</h2>
       <div className="cards-row">
         {postsID.map((post) => (
-          <CardWithCompose key={post.id} productID={post.id} brands={brands} />
+          <Card key={post.id} productID={post.id} brands={brands} />
         ))}
+
         {/* <div className="card-button" onClick={handleClickAll}>
           <span>Rodyti visas prekes</span>
         </div> */}
