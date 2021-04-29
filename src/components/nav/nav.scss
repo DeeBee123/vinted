@@ -1,24 +1,66 @@
 @import "../../styles/base";
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 .navigation {
   width: 100%;
 
   &__section {
-    max-width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
+    .right {
+      display: flex;
+    }
+  }
+
+  .goods-div {
+    color: #333;
+    position: relative;
+    
+    .arrow {
+      margin-left: 5px;
+      color: rgb(168, 168, 168);
+    }
+    button {
+      padding: 10px 11px;
+      background-color: #f5f6f7;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-right: 1px solid grey;
+      cursor: pointer;
+    }
+  }
+  .drop-down {
+    width: 150px;
+    margin-top: 5px;
+    background-color: white;
+    list-style-type: none;
+    position: absolute;
+    z-index: 3;
+    font-size: 16px;
+    border-radius: 5px;
+    li {
+      padding: 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f5f6f7;
+      }
+    }
   }
   .logo {
     color: $brand-color;
     margin-right: 40px;
     font-weight: 700;
     font-size: 35px;
+    font-family: "Satisfy", cursive;
   }
   .search-form {
     // width: 60%;
     display: flex;
+    background-color: #f5f6f7;
 
     // color: $grey-color;
   }
@@ -31,16 +73,34 @@
   //     justify-content: space-between;
 
   //   }
+  .search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+
+    .input {
+      background-color: #f5f6f7;
+      height: 100%;
+      border: none;
+      margin-left: 5px;
+      font-size: 16px;
+    }
+    .search-icon {
+      color: rgb(168, 168, 168);
+      margin-left: 5px;
+    }
+  }
   .form-selection {
     padding: 5px 7px;
-    width: 50px;
+    width: 100px;
     display: flex;
     position: relative;
     background-color: lightgray;
     appearance: none;
-    background-image: url("../../assets/right-arrow.svg");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
+    // background-image: url("../../assets/right-arrow.svg");
+    // background-repeat: no-repeat;
+    // background-position-x: 100%;
+
     // background-position-y: 5px;
     border: none;
     border-bottom-left-radius: 5px;
@@ -53,6 +113,9 @@
     //     background-color: $grey-color;
     //     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     //   }
+    .arrow {
+      color: #333;
+    }
 
     &__option {
       color: $grey-color;
@@ -62,15 +125,44 @@
     }
   }
   .search {
-      
-      &__input {
-        padding: 5px 7px;
-        border: none;
-        background-color: lightgray;
-        border-left:1px solid grey;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-
+    &__input {
+      padding: 5px 7px;
+      border: none;
+      background-color: lightgray;
+      border-left: 1px solid grey;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
   }
+}
+
+.custom-sign {
+  padding: 0 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.register-btn {
+  background-color: $transparent;
+  border: 1px solid $brand-color;
+  color: $brand-color;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 8px;
+  margin-right: 7px;
+}
+
+.question {
+  position: relative;
+  background-color: $transparent;
+  color: #333;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  top: 50%;
+  cursor: pointer;
+  align-self: center;
+  margin-left: 10px;
 }
