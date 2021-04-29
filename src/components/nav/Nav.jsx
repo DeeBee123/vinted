@@ -3,7 +3,7 @@ import "./nav.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSortDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export const Nav = () => {
+export const Nav = ({action}) => {
   const [value, setValue] = useState("");
 
   const handleOpenDropDown = () => {
@@ -15,7 +15,7 @@ export const Nav = () => {
 
   const handleKeyPress = (e) => {
     e.preventDefault();
-    //  e.key==="Enter"&& action(e.target.value)
+  action(e.target.value)
   };
   const handleChange= (e)=> {
     e.preventDefault()
@@ -39,17 +39,17 @@ export const Nav = () => {
             </ul>
           </div>
 
-          <form action="" className="search-form">
+          <div className="search-form">
             <FontAwesomeIcon className="search-icon" icon={faSearch} />
             <input
-              type="search"
+              type="text"
               placeholder="Ieškoti prekių"
               className="input"
-              onKeyPress={(e) => handleKeyPress(e)}
+              onKeyPress={(e)=> e.key ==="Enter" && handleKeyPress(e)}
               onChange={handleChange}
               value={value}
             />
-          </form>
+          </div>
         </div>
         <div className="buttons-wrap">
           <button className="btn-global register-btn">

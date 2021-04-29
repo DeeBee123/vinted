@@ -3,13 +3,14 @@ import "./card.scss";
 // import { Heart } from "../heart/Heart";
 import API from "../../shared/api";
 
-const Card = ({ productID, brands }) => {
+const Card = ({ productID, brands, input }) => {
   const [data, setData] = useState("");
   const [user, setUser] = useState("");
 
   useEffect(() => {
     API.get(`products/${productID}`)
       .then((response) => {
+        console.log(response.data)
         setData(response.data);
       })
       .catch((error) => console.log(error));
@@ -18,14 +19,19 @@ const Card = ({ productID, brands }) => {
   useEffect(() => {
     data.user &&  API.get(`users/${data.user}`)
       .then((response) => {
+      
        setUser(response.data);
       })
       .catch((error) => console.log(error));
   }, [data.user]);
-
+const handleFilter = ()=> {
+  let copyData = [...data].filter(data=> data.title.includes(input))
+  input =""
+  setData(copyData)
+}
   return (
     <div className="card">
-      {data.length !== 0 && (
+      {data.length !== 0 && input==="" ? (
         <>
           <div className="user-row">
             <div
@@ -50,7 +56,8 @@ const Card = ({ productID, brands }) => {
             </div>
           </div>
         </>
-      )}
+      ): handleFilter}
+      
     </div>
   );
 };
