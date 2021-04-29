@@ -5,9 +5,13 @@ import {Header} from "./components/header/Header"
 import {Nav} from "./components/nav/Nav"
 
 function App() {
+
+//   const handleInputChange=(e)=> {
+// console.log(e)
+//   }
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <Header/>
       <News />
     </div>

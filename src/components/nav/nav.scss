@@ -3,22 +3,25 @@
 
 .navigation {
   width: 100%;
+  font-family: "Lato", sans-serif;
 
   &__section {
     width: 90%;
+    max-width: 1280px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     .right {
       display: flex;
+      flex-grow: 3;
     }
   }
 
   .goods-div {
     color: #333;
     position: relative;
-    
+
     .arrow {
       margin-left: 5px;
       color: rgb(168, 168, 168);
@@ -29,11 +32,12 @@
       border: none;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      border-right: 1px solid grey;
+      border-right: 0.5px solid rgb(168, 168, 168);
       cursor: pointer;
     }
   }
   .drop-down {
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
     width: 150px;
     margin-top: 5px;
     background-color: white;
@@ -42,6 +46,10 @@
     z-index: 3;
     font-size: 16px;
     border-radius: 5px;
+    visibility: hidden;
+    &-show {
+      visibility: visible;
+    }
     li {
       padding: 8px;
       cursor: pointer;
@@ -56,27 +64,18 @@
     font-weight: 700;
     font-size: 35px;
     font-family: "Satisfy", cursive;
+    flex-grow: 1;
   }
   .search-form {
-    // width: 60%;
     display: flex;
     background-color: #f5f6f7;
-
-    // color: $grey-color;
   }
-  //   .select {
-  //     width: 200px;
-  //     position: relative;
-  //     background-color: antiquewhite;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: space-between;
 
-  //   }
   .search-form {
     display: flex;
     align-items: center;
     margin-right: 15px;
+    width: 70%;
 
     .input {
       background-color: #f5f6f7;
@@ -84,6 +83,7 @@
       border: none;
       margin-left: 5px;
       font-size: 16px;
+      outline: none;
     }
     .search-icon {
       color: rgb(168, 168, 168);
@@ -97,22 +97,10 @@
     position: relative;
     background-color: lightgray;
     appearance: none;
-    // background-image: url("../../assets/right-arrow.svg");
-    // background-repeat: no-repeat;
-    // background-position-x: 100%;
-
-    // background-position-y: 5px;
     border: none;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     cursor: pointer;
-    // &::after {
-    //     content: "";
-    //     width: 20px;
-    //     height: 20px;
-    //     background-color: $grey-color;
-    //     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-    //   }
     .arrow {
       color: #333;
     }
@@ -137,20 +125,27 @@
 }
 
 .custom-sign {
-  padding: 0 8px;
+  padding: 7px 8px;
   border: none;
   font-size: 12px;
   font-weight: 500;
+  &:hover {
+    background-color: #11a2aa;
+  }
 }
 
 .register-btn {
+  font-family: "Lato", sans-serif;
   background-color: $transparent;
   border: 1px solid $brand-color;
   color: $brand-color;
   font-size: 12px;
   font-weight: 500;
-  padding: 0 8px;
+  padding: 7px 8px;
   margin-right: 7px;
+  &:hover {
+    background-color: #f4f9ff;
+  }
 }
 
 .question {
@@ -164,5 +159,9 @@
   top: 50%;
   cursor: pointer;
   align-self: center;
-  margin-left: 10px;
+  margin: 0 10px 0 20px;
+}
+
+.buttons-wrap {
+  flex-grow: 2;
 }
