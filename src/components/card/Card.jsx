@@ -54,7 +54,7 @@ const Card = ({ productID, brands, input }) => {
         </div>
       )}
       {input.length > 0 &&
-        data.title.toLowerCase().includes(input.toLowerCase())&&(
+        data.title.toLowerCase().includes(input.toLowerCase())&&console.log(data) &&(
           <div className="card">
             <div className="user-row">
               <div

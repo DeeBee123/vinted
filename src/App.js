@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {News} from "./features/news/News"
 import {Header} from "./components/header/Header"
 import {Nav} from "./components/nav/Nav"
+import {SingleProduct} from "./features/singleProduct/SingleProduct"
 
 function App() {
 const [input, setInput]= useState("")
@@ -12,8 +13,10 @@ setInput(e)
   return (
     <div className="App">
       <Nav action={handleInputChange}/>
+{/*      
       <Header/>
-      <News input={input}/>
+      <News input={input}/> */}
+ <SingleProduct/>
     </div>
   );
 }
