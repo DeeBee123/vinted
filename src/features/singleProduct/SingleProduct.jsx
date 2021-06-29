@@ -1,7 +1,8 @@
 import React from "react";
-import "./singleProduct.scss"
+import "./singleProduct.scss";
+import { useHistory, useParams } from 'react-router-dom'
 
-export const SingleProduct = () => {
+export const SingleProduct = ({data}) => {
   const img = [
     "https://in3.dev/vinted/images/products/009/01_00d68_BsAZUuyRi7mskrHrYWPXq8Rn.jpeg",
     "https://in3.dev/vinted/images/products/009/01_0120a_ZhdnpNPtXb58KpvH9MuJvrRQ.jpeg",
@@ -10,6 +11,8 @@ export const SingleProduct = () => {
     "https://in3.dev/vinted/images/products/009/02_005a5_NZAs4UmsPxbfcArMkbWTyzjr.jpeg",
   ];
 
+  let { id } = useParams();
+console.log(data)
   //if img is more than 1 then render function
   //switch fuction case length
   //length 2 half half
@@ -27,6 +30,7 @@ export const SingleProduct = () => {
             style={{ backgroundImage: `url ${image}` }}
           ></div>
         ));
+        //{img.map(image => <div key={image} className={image[0]? "img lg" : "img md"} style={{backgroundImage: `url(${image})`}}></div>)}
         break
       case 3:
         img.map((image) => (
@@ -37,6 +41,7 @@ export const SingleProduct = () => {
             style={{ backgroundImage: `url ${image}` }}
           ></div>
         ));
+        // {img.map((image, index) => <div key={image} className={index===0? "img lg" : "img md"} style={{backgroundImage: `url(${image})`}}></div>)}
         break
       default:
         <span>Oops something went wrong</span>;
@@ -45,7 +50,7 @@ export const SingleProduct = () => {
 
   return (
     <section className="single-product">
-      <div className="images-container">Images</div>
+      <div className="images-container">{img.map((image, index) => <div key={image} className={index===0? "img lg" :  "img sm"} style={{backgroundImage: `url(${image})`}}></div>)}</div>
       <aside className="aside-bar">
         <div className="general-info">
           <div className="price side-price">18,00 &euro;</div>

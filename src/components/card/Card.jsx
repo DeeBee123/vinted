@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./card.scss";
 // import { Heart } from "../heart/Heart";
 import API from "../../shared/api";
+import { Link } from "react-router-dom";
 
-const Card = ({ productID, brands, input }) => {
+const Card = ({ productID, brands, input, action }) => {
   const [data, setData] = useState("");
   const [user, setUser] = useState("");
 
@@ -36,10 +37,12 @@ const Card = ({ productID, brands, input }) => {
             ></div>
             <span className="user-name">{user.name}</span>
           </div>
-          <div
+          <a
+            href={`/product/${data.id}`}
             className="image"
             style={{ backgroundImage: `url(${data.img[data.main_img]})` }}
-          ></div>
+            onClick={()=>action(data)}
+          >SC</a>
           <div className="info">
             <div className="row">
               <span className="price">{data.price.toFixed(2)} &euro;</span>
@@ -54,7 +57,8 @@ const Card = ({ productID, brands, input }) => {
         </div>
       )}
       {input.length > 0 &&
-        data.title.toLowerCase().includes(input.toLowerCase())&&console.log(data) &&(
+        data.title.toLowerCase().includes(input.toLowerCase()) &&
+        console.log(data) && (
           <div className="card">
             <div className="user-row">
               <div

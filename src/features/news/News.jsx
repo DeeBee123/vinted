@@ -3,7 +3,7 @@ import "./news.scss";
 import API from "../../shared/api";
 import Card from "../../components/card/Card";
 
-export const News = ({input}) => {
+export const News = ({input, action}) => {
   const [postsID, setPostsID] = useState([]);
   const [error, setError] = useState(false);
   const [brands, setBrands] = useState([]);
@@ -33,7 +33,7 @@ export const News = ({input}) => {
       <h2 className="section-title">Naujienų srautas</h2>
       <div className="cards-row">
         {postsID.map((post) => (
-          <Card key={post.id} productID={post.id} brands={brands} input={input}/>
+          <Card key={post.id} productID={post.id} brands={brands} input={input} action={action}/>
         ))}
 
         {/* <div className="card-button" onClick={handleClickAll}>
